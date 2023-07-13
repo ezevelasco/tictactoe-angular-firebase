@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 
 import { FormsModule } from "@angular/forms";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+//import { AngularFireModule } from "@angular/fire/compat";
 
 
 
@@ -18,7 +22,9 @@ import { FormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
