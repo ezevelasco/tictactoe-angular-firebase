@@ -1,0 +1,14 @@
+<div class="main-container">
+    <img class="login-logo" src="../assets/versus.png" alt="">
+    <div class="form-container">
+        
+        <h3>Login</h3>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">   
+            <label for="name" required >Username</label>
+            <input type="text" name="username" [(ngModel)]="formData.username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="formData.password">
+            <button type="submit" class="submit-login-form">Submit</button>
+        </form>
+    </div>
+</div>
